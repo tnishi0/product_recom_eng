@@ -19,9 +19,9 @@ num_items_to_select = 3000
 # Source of raw data:
 #   Kaggle - Retailrocket recommender system dataset
 #   https://www.kaggle.com/datasets/retailrocket/ecommerce-dataset?select=events.csv
-file_name = 'data/events.csv'
+file_name = 'data/events.csv.gz'
 print(f'Loading "{file_name}"...')
-df = pd.read_csv(file_name)
+df = pd.read_csv(file_name, compression='gzip')
 print(f"Loaded {len(df)} rows of data")
 print('Processing the data...')
 
