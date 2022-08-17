@@ -9,22 +9,8 @@ For each transaction, a list of product items purchased was extracted from the d
 As a basis of product recommendation, the following prediction task was formulated: given the day of month, day of week, and hour of day of the transaction as well as the item(s) the customer already has placed in the shopping cart, predict for each product item the probability that the customer later will add it to the cart and purchase it.  The set of items in the cart was encoded in a 3000-dimensional vector of item counts.  A set of logistic regression models, one for each of the 3000 items (which the customer could purchase), were trained; see [`training.ipynb`](training.ipynb).  The training was done using an expanded set of data, accounting for multiple time points during the customer's shopping experience (with different number of items already pleced in the cart).  This expanded data and the trained (set of) models are saved in [`full_train_data.pickle.gz`](full_train_data.pickle.gz) and [`trained_model.pickle`](trained_model.pickle), respectively.
 
 ## Making recommendations
-Given a feature vector encoding the day of month, day of week, hour of day,
- and the item(s) already placed in the cart, the output of the model is a vector of predicted
-probabilities, one for each product item
-• After the customer adds the first item to the shopping cart, the engine selects
-the 3 items with the highest probabilities
-• After adding another item to the cart, the model is re-run and the
-recommendations are updated
-• Repeat after each additional item until the customer is done ordering
-• Limited to 5 unique recommendations per order
+* After the customer adds the first item to the shopping cart, the trained model is used to calculate the purchase probability of each of the 3000 pontential items from the feature vector encoding the day of month, day of week, hour of day, and the item(s) already placed in the cart.  The 3 items that has the highest (predicted) probabilities are selected as the recommendation and shown to the customer.  The model is re-run and the recommendations are updated each time the customer adds an item to the cart, while limited the number of unique recommendations per order to 5.  This process is implemented by the function `run_transaction()` in [`my_utilities.py`](my_utilities.py).
 
-
-* provide analysis of the engine's predictive accuracy and characteristics
-
-
-
-
-TODO: Include mentions/links for :
-* hit_rate.ipynb
-* my_utilities.py
+## Analysis of the recommendation enegine's predictive accuracy
+The accuracy can be measured by the probability that at least one of the recommendations is later
+purchased in that order.  This probability was estimated by running the process above on the test data ([`hit_rate.ipynb`](hit_rate.ipynb)) and the function `hit_rate()` in [`my_utilities.py`](my_utilities.py).  The result was about 3.6%.
