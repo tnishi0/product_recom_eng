@@ -2,7 +2,7 @@
 
 In this project, a prototype recommendation engine was developed using shopping cart data available from Kaggle's [Retailrocket recommender system dataset](https://www.kaggle.com/datasets/retailrocket/ecommerce-dataset?select=events.csv).  The gzipped version of the raw shopping "events" data file `events.csv` can be found in [the data folder](data).  The data file contains a list of three kinds of events: views, add-to-cart events, and transactions.
 
-For each transaction, a list of product items purchased was extracted from the data file (`extract_shopping_cart_data.py`)
+For each transaction, a list of product items purchased was extracted from the data file by running the script `extract_shopping_cart_data.py`.  An exploratory analysis of the extracted information is presented in `EDA.ipynb`.  
 * train a machine learning model to predict purchases based on shopping cart status
 * create a post-processing logic to generate product recommendations
 * provide analysis of the engine's predictive accuracy and characteristics
@@ -12,7 +12,7 @@ The modeling formulation is as follows: given the transaction’s day of month, 
 
 
 TODO: Include mentions/links for :
-* EDA.ipynb
+* 
 * 
 * trained_model.pickle
 *	full_train_data.pickle.gz
