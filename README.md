@@ -1,4 +1,4 @@
-# Building a product recommendation engine from shopping cart data
+# Building Product Recommendation Engine from Shopping Cart Data
 
 The goal of this project is to develop a prototype recommendation engine using a shopping cart data set.  To do this I will:
 * train a machine learning model to predict purchases based on shopping cart status
