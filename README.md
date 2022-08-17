@@ -11,6 +11,6 @@ As a basis of product recommendation, the following prediction task was formulat
 ## Making recommendations
 After the customer adds the first item to the shopping cart, the trained model is used to calculate the purchase probability of each of the 3000 pontential items from the feature vector encoding the day of month, day of week, hour of day, and the item(s) already placed in the cart.  The 3 items that has the highest (predicted) probabilities are selected as the recommendation and shown to the customer.  The model is re-run and the recommendations are updated each time the customer adds an item to the cart, while limited the number of unique recommendations per order to 5.  This process is implemented by the function `run_transaction()` in [`my_utilities.py`](my_utilities.py).
 
-## Analysis of the recommendation enegine's predictive accuracy
+## Recommendation enegine's predictive accuracy
 The accuracy can be measured by the probability that at least one of the recommendations is later
 purchased in that order.  This probability was estimated by running the process above on the test data ([`hit_rate.ipynb`](hit_rate.ipynb)) and the function `hit_rate()` in [`my_utilities.py`](my_utilities.py).  The result was about 3.6%.
