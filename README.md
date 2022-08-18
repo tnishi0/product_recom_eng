@@ -5,6 +5,8 @@ In this project, a prototype recommendation engine was developed using shopping 
 ## Exloratory data analyis
 For each transaction, a list of product items purchased was extracted from the data file by running the script [`extract_shopping_cart_data.py`](extract_shopping_cart_data.py).  The cleaned data was split into training and test data adn saved to files in the folder [`cleaned_data`](cleaned_data).  In order to keep the training time manageable, only the 3000 most-frequently purchsed product items were kept.  An exploratory analysis and visualizations of the extracted information is presented in [`EDA.ipynb`](EDA.ipynb).
 
+![EDA_num_transactions_over_time.png](EDA_num_transactions_over_time.png)
+
 ## Training machine learning model
 As a basis of product recommendation, the following prediction task was formulated: given the day of month, day of week, and hour of day of the transaction as well as the item(s) the customer already has placed in the shopping cart, predict for each product item the probability that the customer later will add it to the cart and purchase it.  The set of items in the cart was encoded in a 3000-dimensional vector of item counts.  A set of logistic regression models, one for each of the 3000 items (which the customer could purchase), were trained; see [`training.ipynb`](training.ipynb).  The training was done using an expanded set of data, accounting for multiple time points during the customer's shopping experience (with different number of items already pleced in the cart).  This expanded data and the trained (set of) models are saved in [`full_train_data.pickle.gz`](full_train_data.pickle.gz) and [`trained_model.pickle`](trained_model.pickle), respectively.
 
