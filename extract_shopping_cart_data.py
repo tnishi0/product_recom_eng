@@ -1,7 +1,4 @@
 """Extracts the shopping cart data
-
-Note: Running this on a MacBook Air with Apple M1 chip and 8GB memory
-took ~2 min 36 sec.
 """
 
 import pickle
