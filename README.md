@@ -13,6 +13,4 @@ After the customer adds the first item to the shopping cart, the trained model i
 
 ## Recommendation enegine's predictive accuracy
 The accuracy can be measured by the probability that at least one of the recommendations is later
-purchased in that order.  This probability was estimated by running the process above on the test data ([`hit_rate.ipynb`](hit_rate.ipynb)) and the function `hit_rate()` in [`my_utilities.py`](my_utilities.py).  The result was about 3.6%, but this is not bad as it sounds, since the probability of making any additional purchase is low to begin with (about 12%; see [`prob_more_purchase.ipynb`](prob_more_purchase.ipynb)).
-
-Since the probability of additional purchase is 0.12054469018460975 (see EDA.ipynb), the conditional probability that one of the recommended item is purchased later in the shopping process is:
+purchased in that order.  This probability was estimated by running the process above on the test data ([`hit_rate.ipynb`](hit_rate.ipynb)) and the function `hit_rate()` in [`my_utilities.py`](my_utilities.py).  The result was about 2.6%, but this is not bad as it sounds, since the probability of making any additional purchase is low to begin with (about 12%; see [`prob_more_purchase.ipynb`](prob_more_purchase.ipynb)).  The conditional probability that one of the recommended item is purchased later in the shopping process given that the customer purchases more items is about 22% (≈ 0.026 / 0.12 x 100).
