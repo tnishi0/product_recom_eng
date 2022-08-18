@@ -1,4 +1,4 @@
-# Building Product Recommendation Engine from Shopping Cart Data
+# Building Product Recommendation Engine from Retailrocket Shopping Cart Data
 
 In this project, a prototype recommendation engine was developed using shopping cart data available from Kaggle's [Retailrocket recommender system dataset](https://www.kaggle.com/datasets/retailrocket/ecommerce-dataset?select=events.csv).  The gzipped version of the raw shopping "events" data file `events.csv.gz` can be found in the folder [`data`](data).  The file contains a list of three kinds of events: views, add-to-cart events, and transactions.
 
