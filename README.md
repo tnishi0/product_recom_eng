@@ -1,6 +1,6 @@
-# Building product recommendation engine from Retailrocket shopping cart data
+# Building product recommendation engine from Retail Rocket shopping cart data
 
-In this project, a prototype recommendation engine was developed using shopping cart data available from Kaggle's [Retailrocket recommender system dataset](https://www.kaggle.com/datasets/retailrocket/ecommerce-dataset?select=events.csv).  The gzipped version of the raw shopping "events" data file `events.csv.gz` can be found in the folder [`data`](data).  The file contains a list of three kinds of events: views, add-to-cart events, and transactions.
+In this project, a prototype recommendation engine was developed using shopping cart data available from Kaggle's [Retail Rocket recommender system dataset](https://www.kaggle.com/datasets/retailrocket/ecommerce-dataset?select=events.csv).  The gzipped version of the raw shopping "events" data file `events.csv.gz` can be found in the folder [`data`](data).  The file contains a list of three kinds of events: views, add-to-cart events, and transactions.
 
 ## Exloratory data analyis
 For each transaction, a list of product items purchased was extracted from the data file by running the script [`extract_shopping_cart_data.py`](extract_shopping_cart_data.py).  The cleaned data was split into training and test data adn saved to files in the folder [`cleaned_data`](cleaned_data).  In order to keep the training time manageable, only the 3000 most-frequently purchsed product items were kept.  An exploratory analysis and visualizations of the extracted information is presented in [`EDA.ipynb`](EDA.ipynb).
